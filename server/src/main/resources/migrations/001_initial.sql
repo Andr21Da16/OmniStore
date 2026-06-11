@@ -37,6 +37,8 @@ CREATE TABLE product_image(
     cover BOOLEAN NOT NULL,
     description_image TEXT NOT NULL,
 
+
+
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP,
 
@@ -52,10 +54,14 @@ CREATE TABLE categories(
     category_name VARCHAR(100) NOT NULL,
     category_description TEXT NOT NULL,
 
+    parent_id INTEGER NULL,
+
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP,
 
-    CONSTRAINT category_id_pk PRIMARY KEY (category_id)
+    CONSTRAINT category_id_pk PRIMARY KEY (category_id),
+    CONSTRAINT category_parent_id_fk FOREIGN KEY (parent_id)
+        REFERENCES categories(category_id)
 );
 
 CREATE TABLE product_category(

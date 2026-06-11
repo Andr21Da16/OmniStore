@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -25,6 +27,13 @@ public class Category {
 
     @Column(name = "category_description", nullable = false)
     private String categoryDescription;
+
+    @ManyToOne
+    @JoinColumn(name = "parent_id")
+    private Category parent;
+
+    @OneToMany(mappedBy = "parent")
+    private List<Category> children;
 
     @Embedded
     private Audit audit = new Audit();
