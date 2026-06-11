@@ -1,10 +1,11 @@
 package com.andree.server.dto.response.brand;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
-@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class BrandResponseDTO {
 
     private Long id;

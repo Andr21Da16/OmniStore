@@ -37,8 +37,6 @@ CREATE TABLE product_image(
     cover BOOLEAN NOT NULL,
     description_image TEXT NOT NULL,
 
-
-
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP,
 
