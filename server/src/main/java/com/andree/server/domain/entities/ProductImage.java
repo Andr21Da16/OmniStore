@@ -20,7 +20,7 @@ public class ProductImage {
     @Column(name = "product_image_id", unique = true, nullable = false)
     private Long id;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id")
     private Product product;
 
