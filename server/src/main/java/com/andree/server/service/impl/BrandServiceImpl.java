@@ -32,10 +32,14 @@ public class BrandServiceImpl implements BrandService {
 
         Page<BrandResponseDTO> brandResponseDTOPage = brandPage.map(brandMapper::toResponse);
 
+        String message = brandPage.isEmpty()
+                ? "No se encontraron marcas"
+                : "Marcas obtenidas correctamente";
+
         return ApiResponse.<List<BrandResponseDTO>>builder()
                 .timestamp(Instant.now())
                 .status(HttpStatus.OK.value())
-                .message("Se encontraron las siguientes marcas")
+                .message(message)
                 .data(brandResponseDTOPage.getContent())
                 .meta(metaMapper.toMeta(brandResponseDTOPage))
                 .build();

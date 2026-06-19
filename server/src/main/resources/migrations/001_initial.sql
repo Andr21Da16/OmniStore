@@ -34,6 +34,7 @@ CREATE TABLE products(
 CREATE TABLE product_image(
     product_image_id SERIAL NOT NULL,
     product_id INTEGER NOT NULL,
+    url_image TEXT NOT NULL,
     cover BOOLEAN NOT NULL,
     description_image TEXT NOT NULL,
 

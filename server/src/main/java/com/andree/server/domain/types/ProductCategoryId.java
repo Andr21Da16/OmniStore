@@ -16,7 +16,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class ProductCategoryId implements Serializable {
 
-    private Long productId;
+    private Long product;
 
-    private Long categoryId;
+    private Long category;
 }

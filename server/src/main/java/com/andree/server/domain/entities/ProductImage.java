@@ -27,6 +27,9 @@ public class ProductImage {
     @Column(name = "cover", nullable = false)
     private Boolean cover;
 
+    @Column(name = "url_image", nullable = false)
+    private String urlImage;
+
     @Column(name = "description_image", nullable = false)
     private String description;
 
